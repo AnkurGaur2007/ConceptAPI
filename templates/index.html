@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blockchain Demo</title>
+</head>
+<body>
+    <h1>Blockchain Demo</h1>
+    
+    <h2>Node 1</h2>
+    <p>Chain:</p>
+    <pre>{{ node1.to_dict() | tojson(indent=4) }}</pre>
+
+    <h2>Node 2</h2>
+    <p>Chain:</p>
+    <pre>{{ node2.to_dict() | tojson(indent=4) }}</pre>
+
+    <h2>Node 3</h2>
+    <p>Chain:</p>
+    <pre>{{ node3.to_dict() | tojson(indent=4) }}</pre>
+
+    <h2>Add New Block</h2>
+    <form action="/add_block" method="POST">
+        <label for="data">Data:</label>
+        <input type="text" id="data" name="data">
+        <input type="submit" value="Add Block">
+    </form>
+</body>
+</html>
