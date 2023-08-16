@@ -1,5 +1,7 @@
 import hashlib
 import time
+import os
+
 
 class Block:
     def __init__(self, index, timestamp, data, previous_hash):
@@ -37,6 +39,10 @@ for block in my_blockchain.chain:
 
 from flask import Flask, render_template
 app = Flask(__name__)
+
+
+template_dir = os.path.abspath('./templates')
+app.template_folder = template_dir
 
 @app.route('/')
 def display_blocks():
