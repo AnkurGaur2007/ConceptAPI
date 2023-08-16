@@ -24,6 +24,20 @@ body {
     padding: 1rem;
 }
 
+/* Style for the data displayed by nodes */
+.node-data {
+    font-family: "Courier New", monospace;
+    white-space: pre-wrap;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    line-height: 1.2;
+    font-size: 14px;
+    overflow: auto;
+}
+
+/* Style for the "Add Block" form */
 .form-group label {
     color: #343a40;
     font-weight: bold;

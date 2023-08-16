@@ -66,7 +66,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html', node1=node1, node2=node2, node3=node3)
+    return render_template('index.html', node1=node1.chain, node2=node2.chain, node3=node3.chain)
 
 @app.route('/add_block', methods=['POST'])
 def add_block():

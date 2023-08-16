@@ -3,15 +3,36 @@
 <head>
     <title>Blockchain Demo</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background-color: rgb(23, 133, 230);
+        }
+
+        /* Style for the data displayed by nodes */
+        .node-data {
+            font-family: "Courier New", monospace;
+            background-color: #333;
+            color: #a6a6a6;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            overflow: auto;
+            border: 1px solid #555;
+            margin-bottom: 10px; /* Add margin between nodes */
+            width: 200%; /* Set width to 200% to ensure entire hash is displayed */
+        }
+
+        /* Adjust the column width */
+        .card-block {
+            width: 100%;
+        }
+
+        /* Add spacing between columns */
+        .node-card {
+            margin-right: 20px; /* Add spacing to prevent overlapping */
+        }
+    </style>
 </head>
-<style>
-    body{
-        background-color: rgb(23, 133, 230);
-    }
-
-</style>
-
 <body>
     <div class="container mt-5">
         <h1 class="text-center">Blockchain Demo</h1>
@@ -24,8 +45,18 @@
                     </div>
                     <div class="card-body">
                         <p class="card-text">Chain:</p>
-                        <pre>{{ node1.to_dict() | tojson(indent=4) }}</pre>
-                        
+                        <div class="node-data">
+                            {% for block in node1 %}
+                                <h4>Block {{ block.index + 1 }}</h4>
+                                <pre>Data: {{ block.data }}</pre>
+                                <div class="break-hash">Hash: {{ block.hash }}</div>
+                                <pre>Index: {{ block.index }}</pre>
+                                <pre>Nonce: {{ block.nonce }}</pre>
+                                <pre>Previous Hash: {{ block.previous_hash }}<br></pre>
+                                <pre>Timestamp: {{ block.timestamp }}</pre>
+                                {% if not loop.last %}<hr>{% endif %}
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -37,8 +68,18 @@
                     </div>
                     <div class="card-body">
                         <p class="card-text">Chain:</p>
-                        <pre>{{ node2.to_dict() | tojson(indent=4) }}</pre>
-                        
+                        <div class="node-data">
+                            {% for block in node1 %}
+                            <h4>Block {{ block.index + 1 }}</h4>
+                            <pre>Data: {{ block.data }}</pre>
+                            <div class="break-hash">Hash: {{ block.hash }}</div>
+                            <pre>Index: {{ block.index }}</pre>
+                            <pre>Nonce: {{ block.nonce }}</pre>
+                            <pre>Previous Hash: {{ block.previous_hash }}<br></pre>
+                            <pre>Timestamp: {{ block.timestamp }}</pre>
+                            {% if not loop.last %}<hr>{% endif %}
+                        {% endfor %}>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -50,8 +91,18 @@
                     </div>
                     <div class="card-body">
                         <p class="card-text">Chain:</p>
-                        <pre>{{ node3.to_dict() | tojson(indent=4) }}</pre>
-                        
+                        <div class="node-data">
+                            {% for block in node1 %}
+                                <h4>Block {{ block.index + 1 }}</h4>
+                                <pre>Data: {{ block.data }}</pre>
+                                <div class="break-hash">Hash: {{ block.hash }}</div>
+                                <pre>Index: {{ block.index }}</pre>
+                                <pre>Nonce: {{ block.nonce }}</pre>
+                                <pre>Previous Hash: {{ block.previous_hash }}<br></pre>
+                                <pre>Timestamp: {{ block.timestamp }}</pre>
+                                {% if not loop.last %}<hr>{% endif %}
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>
