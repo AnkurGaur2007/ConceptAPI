@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Blockchain Demo</title>
+    <title>Blockchain App</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
     <style>
         body {
-            background-image: url(https://wallpapercave.com/wp/yQVc6Uj.jpg);
+            background-color: rgb(0, 0, 126);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
+
 
         
         .card-header{
-            background-color: aqua;
+            background-color: rgb(21, 255, 255);
         }
         
         .card-body{
-            background-color: red;
+            background-color: rgb(248, 238, 218);
         }
 
         .node-data{
@@ -27,7 +31,7 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="text-center" style="color: white;">Blockchain Demo</h1>
+        <h1 class="text-center" style="color: white;">Blockchain App</h1>
 
         <div class="row mt-5">
             <div class="col-md-4">
@@ -104,15 +108,15 @@
             <div class="col-md-4 offset-md-4">
                 <div class="card card-block">
                     <div class="card-header">
-                        <h2 class="card-title">Add New Block</h2>
+                        <h2 class="card-title">Add prompt</h2>
                     </div>
                     <div class="card-body">
                         <form action="/add_block" method="POST">
                             <div class="form-group">
-                                <label for="data">Data:</label>
+                                <label for="data">Prompt:</label>
                                 <input type="text" class="form-control" id="data" name="data">
                             </div>
-                            <button type="submit" class="btn btn-info btn-block">Add Block</button>
+                            <button type="submit" class="btn btn-info btn-block">Get response</button>
                         </form>
                     </div>
                 </div>
