@@ -70,8 +70,15 @@ def index():
 
 @app.route('/add_block', methods=['POST'])
 def add_block():
-    data_to_add = request.form['data']
+    datax = request.form['data']
+    #The API code for the AI model comes here.
+    #Here's just a proof-of-concept example.
+    data_to_add = 'hello, '+ datax
     new_block = Block(0, "0", 0, data_to_add)
+
+    
+
+
     
     node1.add_block(new_block)
     node2.add_block(new_block)
