@@ -57,7 +57,6 @@ class Blockchain:
     def to_dict(self):
         return [block.to_dict() for block in self.chain]
 
-# Simulation
 node1 = Blockchain()
 node2 = Blockchain()
 node3 = Blockchain()
