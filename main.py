@@ -37,10 +37,10 @@ class Block:
 
 class Blockchain:
     def __init__(self):
-        self.chain = [self.create_genesis_block()]
+        self.chain = [self.create_origin_block()]
 
-    def create_genesis_block(self):
-        return Block(0, "0", int(time.time()), "Genesis Block")
+    def create_origin_block(self):
+        return Block(0, "0", int(time.time()), "Origin Block")
 
     def get_latest_block(self):
         return self.chain[-1]

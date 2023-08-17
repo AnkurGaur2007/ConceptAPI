@@ -40,14 +40,13 @@
                         <h2 class="card-title">Node 1</h2>
                     </div>
                     <div class="card-body">
-                        <p class="card-text">Chain:</p>
+                        <p class="card-text"></p>
                         <div class="node-data">
                             {% for block in node1 %}
                                 <h4>Block {{ block.index + 1 }}</h4>
                                 <pre>Data: {{ block.data }}</pre>
                                 <div class="break-hash">Hash: {{ block.hash }}</div>
                                 <pre>Index: {{ block.index }}</pre>
-                                <pre>Nonce: {{ block.nonce }}</pre>
                                 <pre>Previous Hash: {{ block.previous_hash }}<br></pre>
                                 <pre>Timestamp: {{ block.timestamp }}</pre>
                                 {% if not loop.last %}<hr>{% endif %}
@@ -63,18 +62,17 @@
                         <h2 class="card-title">Node 2</h2>
                     </div>
                     <div class="card-body">
-                        <p class="card-text">Chain:</p>
+                        <p class="card-text"></p>
                         <div class="node-data">
                             {% for block in node1 %}
                             <h4>Block {{ block.index + 1 }}</h4>
                             <pre>Data: {{ block.data }}</pre>
                             <div class="break-hash">Hash: {{ block.hash }}</div>
                             <pre>Index: {{ block.index }}</pre>
-                            <pre>Nonce: {{ block.nonce }}</pre>
                             <pre>Previous Hash: {{ block.previous_hash }}<br></pre>
                             <pre>Timestamp: {{ block.timestamp }}</pre>
                             {% if not loop.last %}<hr>{% endif %}
-                        {% endfor %}>
+                        {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -86,14 +84,14 @@
                         <h2 class="card-title">Node 3</h2>
                     </div>
                     <div class="card-body">
-                        <p class="card-text">Chain:</p>
+                        <p class="card-text"></p>
                         <div class="node-data">
                             {% for block in node1 %}
                                 <h4>Block {{ block.index + 1 }}</h4>
                                 <pre>Data: {{ block.data }}</pre>
                                 <div class="break-hash">Hash: {{ block.hash }}</div>
                                 <pre>Index: {{ block.index }}</pre>
-                                <pre>Nonce: {{ block.nonce }}</pre>
+
                                 <pre>Previous Hash: {{ block.previous_hash }}<br></pre>
                                 <pre>Timestamp: {{ block.timestamp }}</pre>
                                 {% if not loop.last %}<hr>{% endif %}
