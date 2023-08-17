@@ -6,7 +6,7 @@ import torch
 from transformers import T5ForConditionalGeneration, T5Tokenizer
 
 
-model_name = 't5-small'  # You can experiment with other T5 variants as well
+model_name = 't5-small'
 model = T5ForConditionalGeneration.from_pretrained(model_name)
 tokenizer = T5Tokenizer.from_pretrained(model_name)
 
@@ -72,16 +72,6 @@ node3.add_block(new_block)
 print("Block added to all nodes.")
 
 def generate_response(prompt, max_length=100):
-    """
-    Generates a response to the given prompt.
-    
-    Args:
-        prompt (str): The input prompt for generating the response.
-        max_length (int): Maximum length of the generated response.
-        
-    Returns:
-        str: Generated response.
-    """
     input_ids = tokenizer.encode(prompt, return_tensors='pt')
     with torch.no_grad():
         output = model.generate(input_ids, max_length=max_length, num_return_sequences=1)
@@ -102,10 +92,6 @@ def add_block():
     data_to_add = generate_response(datax)
     new_block = Block(0, "0", 0, data_to_add)
 
-    
-
-
-    
     node1.add_block(new_block)
     node2.add_block(new_block)
     node3.add_block(new_block)
