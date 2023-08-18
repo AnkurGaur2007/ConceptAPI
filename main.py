@@ -55,8 +55,8 @@ This class defines the blockchain and the functions which are supposed to be per
 4)The fourth function calls the a fuction from the class Block which is then used to define the attributes of the new block which is
 supposed to be added.
 
-Note: The must be an function which validates the data of each Block and should make sure that the data of individual blocks cannot be
-changed without making a change in each block. This increases the security of the blockchain.
+Note: There must be an function which validates the data of each Block and makes sure that the data of individual blocks cannot be
+changed. This increases the security of the blockchain.
 '''
 
 class Blockchain:
@@ -75,8 +75,6 @@ class Blockchain:
         new_block.timestamp = int(time.time())
         new_block.hash = new_block.calculate_hash()
         self.chain.append(new_block)
-
-    #For security purposes there must be an is_valid function.
 
     def to_dict(self):
         return [block.to_dict() for block in self.chain]
